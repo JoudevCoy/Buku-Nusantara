@@ -1,0 +1,327 @@
+/* Font Import */
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+/* Variable */
+:root {
+  --pm-color: #0055FF;
+  --dark-pm-color: #001643;
+  --dark-text-color: #001643;
+  --sc-color: #3F3F40;
+  --red-color: #ef3030;
+  --bg-color: #FFFFFF;
+  --white-color: #F2F2F5;
+  --overlay-color: #E6EFFE;
+  --out-color: #EAEEF5;
+}
+.myBg-color {
+  background-color: var(--bg-color);
+}
+
+html, body {
+  font-family: "Poppins";
+  background-color: var(--out-color);
+}
+
+
+
+/* Navbar */
+nav.myNavbar {
+  z-index: 1030;
+  background-color: var(--bg-color);
+}
+nav.myNavbar .navbar-brand .myNavbar-icon {
+  transform: translateY(-10%) scale(1.2);
+  max-height: 50px;
+}
+nav.myNavbar .myNavbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+/* Navbar - Search Field */
+
+/* Navbar - Search Field Btn */
+nav.myNavbar .myNavbar-action .search-field-btn:active {
+}
+/* Navbar - Search */
+nav.myNavbar .myNavbar-action form {
+  display: none;
+}
+nav.myNavbar .myNavbar-action form .input-group {
+  border: 1.5px solid;
+  border-color: var(--dark-pm-color);
+  border-radius: 50px;
+  overflow: hidden;
+  transform: scale(0.90);
+}
+nav.myNavbar .myNavbar-action form .input-group .mySearch-input {
+  width: auto;
+  max-width: 280px;
+  box-shadow: none;
+  color: var(--dark-pm-color);
+}
+nav.myNavbar .myNavbar-action form .input-group .mySearch-btn {
+  box-shadow: none;
+  background-color: var(--overlay-color);
+  color: var(--dark-pm-color);
+}
+nav.myNavbar .myNavbar-action form .input-group .mySearch-btn:hover {
+  filter: brightness(0.9);
+}
+/* Navbar - Account Btn */
+nav.myNavbar .myNavbar-action .dropdown .myImage-btn {
+  padding: 6px 25px 6px 6px;
+  box-shadow: none;
+}
+nav.myNavbar .myNavbar-action .dropdown .myImage-btn .acc-icon {
+  border-radius: 50%;
+  width: 22px;
+  aspect-ratio: 1/1;
+  background: var(--overlay-color);
+  object-fit: cover;
+  transform: scale(1.25);
+}
+nav.myNavbar .myNavbar-action .dropdown .myImage-btn[aria-expanded="true"] .caret-icon {
+  transform: translateY(25%) rotate(180deg);
+}
+nav.myNavbar .myNavbar-action .dropdown .myImage-btn .caret-icon {
+  position: absolute;
+  top: 0; right: 7px;
+  transition: none;
+  transform: translateY(22%) rotate(0deg);
+}
+/* Navbar - Account Dropdown */
+nav.myNavbar .myNavbar-action .dropdown .dropdown-menu {
+  background-color: var(--bg-color);
+}
+nav.myNavbar .myNavbar-action .dropdown .dropdown-menu.show {
+  animation: drop .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+nav.myNavbar .myNavbar-action .dropdown .dropdown-menu .dropdown-item:active {
+  background-color: transparent;
+  color: var(--pm-color);
+}
+nav.myNavbar .myNavbar-action .dropdown .dropdown-menu .dropdown-item.text-danger:active {
+  background-color: var(--red-color);
+  color: var(--bg-color) !important;
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+/* Offcanvas */
+.offcanvas .offcanvas-header .offcanvas-title {
+  color: var(--dark-pm-color);
+}
+.offcanvas .offcanvas-body .nav .nav-item.active > .nav-link {
+  background-color: var(--overlay-color);
+}
+.offcanvas .offcanvas-body .nav .nav-item:hover > .nav-link,
+.offcanvas .offcanvas-body .nav .nav-item.active > .nav-link {
+  color: var(--pm-color);
+}
+.offcanvas .offcanvas-body .nav .nav-item .nav-link {
+  color: var(--dark-pm-color);
+  padding: .75rem .5rem;
+}
+.offcanvas .offcanvas-body .nav .nav-item .nav-link span {
+  font-weight: bold;
+}
+
+.offcanvas .myOffcanvas-bottom .logout-link svg,
+.offcanvas .offcanvas-body .nav .nav-item .nav-link svg {
+  display: inline-block;
+  aspect-ratio: 1/1;
+  width: 30px;
+}
+/* Sidebar Mobile Menu Dropdown */
+.offcanvas .offcanvas-body .nav .nav-item .nav-link.myDropdown-toggle > .caret {
+
+  transition: transform .3s .2s ease-in-out;
+}
+.offcanvas .offcanvas-body .nav .nav-item .nav-link.myDropdown-toggle[aria-expanded="true"] > .caret {
+  transition: transform .3s ease-in-out;
+  color: var(--pm-color);
+  transform: rotate(90deg);
+}
+/* Sidebar Mobile Bottom Menu */
+.offcanvas .myOffcanvas-bottom .logout-link {
+  color: var(--red-color);
+}
+.offcanvas .myOffcanvas-bottom .logout-link:hover {
+  color: var(--bs-red);
+}
+
+/* Sidebar Desktop */
+.mySidebar-desktop {
+  display: none;
+  z-index: 2;
+  position: sticky;
+  left: 0;
+  top: calc(100vh - 96.36vh);
+  background-color: var(--bg-color);
+  height: 96.36vh;
+  overflow: hidden;
+}
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item.active > .nav-link {
+  background-color: var(--overlay-color);
+}
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item:hover > .nav-link,
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item.active > .nav-link {
+  color: var(--pm-color);
+}
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item .nav-link {
+  color: var(--dark-pm-color);
+  padding: .75rem .5rem;
+}
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item .nav-link span {
+  font-weight: bold;
+}
+
+.mySidebar-desktop .logout-link-box .logout-link svg,
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item .nav-link svg {
+  display: inline-block;
+  aspect-ratio: 1/1;
+  width: 30px;
+}
+/* Sidebar Desktop Menu Dropdown */
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item .nav-link.myDropdown-toggle > .caret {
+
+  transition: transform .3s .2s ease-in-out;
+}
+.mySidebar-desktop .mySidebar-desktop-body .nav .nav-item .nav-link.myDropdown-toggle[aria-expanded="true"] > .caret {
+  transition: transform .3s ease-in-out;
+  color: var(--pm-color);
+  transform: rotate(90deg);
+}
+
+/* Sidebar Desktop Bottom */
+.mySidebar-desktop .mySidebar-desktop-bottom {
+  margin-top: 150px;
+  border-top: 1.5px solid #eaeaea;
+}
+/* Sidebar Desktop Bottom Menu */
+.mySidebar-desktop .logout-link-box .logout-link {
+  color: var(--red-color);
+}
+.mySidebar-desktop .logout-link-box .logout-link:hover {
+  color: var(--bs-red);
+}
+
+
+/* FEED */
+.feed .book-box .book-box-heading {
+  font-weight: bolder;
+  font-size: 1rem;
+  color: var(--pm-color);
+}
+.feed .book-box .book-list-wrap {
+  overflow: hidden;
+}
+.feed .book-box .book-list-wrap .book-list {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.feed .book-box .book-list-wrap .book-list .book {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--white-color);
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  aspect-ratio: 10/15;
+  overflow: hidden;
+  position: relative;
+}
+.feed .book-box .book-list-wrap .book-list .book .book-img {
+  width: 100%;
+  height: 70%;
+  min-height: 70%;
+  object-fit: cover;
+}
+.feed .book-box .book-list-wrap .book-list .book .book-name {
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding: .8rem 4px;
+  width: 200px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.feed .book-box .book-list-wrap .book-list .book .book-btn {
+  width: calc(100% - 1rem);
+  display: block;
+  height: auto;
+  padding: .25rem;
+  text-align: center;
+  background-color: var(--pm-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/***** TABLET *****/
+@media screen and (min-width: 768px) {
+
+  /* Navbar - Search */
+  nav.myNavbar .myNavbar-action form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Navbar - Search Field Btn */
+  nav.myNavbar .myNavbar-action .search-field-btn {
+    display: none;
+  }
+  
+}
+
+
+
+
+
+
+/***** DESKTOP *****/
+@media screen and (min-width: 992px){
+  /* Navbar */
+  nav.myNavbar .navbar-brand .myNavbar-icon {
+    max-height: 40px;
+  }
+  nav.myNavbar .myNavbar-toggler {
+    display: none;
+  }
+  
+  /* Sidebar (Mobile) */
+  .mySidebar-mobile {
+    display: none;
+  }
+  
+  
+  /* Sidebar (Desktop) */
+  .mySidebar-desktop {
+    display: block;
+  }
+}

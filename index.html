@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/fontawesome.min.css"/>
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Website Perpustakaan</title>
+</head>
+<body>
+  
+  <!-- Search Field -->
+  <div class="offcanvas offcanvas-lg offcanvas-top" tabindex="-1" id="search-field-mobile" aria-labelledby="mySearchFieldMobile">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">Search</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form>
+        <div class="input-group">
+          <input type="text" class="form-control mySearch-input" placeholder="Cari.."
+          aria-label="search-input" aria-describedby="search-btn"/>
+            
+          <button class="btn mySearch-btn" type="button" id="search-btn">
+            Cari
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <nav class="myNavbar navbar navbar-light shadow-md position-sticky top-0 start-0">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">
+        <img src="BukuNusantara-Logo.png" alt="BukuNusantara" class="myNavbar-icon">
+      </a>
+      
+      <div class="myNavbar-action d-flex">
+        <button type="button" id="search-field-btn" class="search-field-btn btn me-2 fs-5 py-0 px-2 shadow-none">
+          <i class="fas fa-magnifying-glass"></i>
+        </button>
+        <form>
+          <div class="input-group">
+            <input type="text" class="form-control mySearch-input" placeholder="Cari.."
+            aria-label="search-input" aria-describedby="search-btn"/>
+            
+            <button class="btn mySearch-btn" type="button" id="search-btn">
+              Cari
+            </button>
+          </div>
+        </form>
+        
+        <div class="dropdown">
+          <button type="button" class="myImage-btn btn fs-5 d-flex" id="accountMenuBtn" data-bs-toggle="dropdown"
+          aria-expanded="false">
+            <img src="image/svg/circle-user.svg" class="acc-icon"/>
+            <span class="visually-hidden"></span>
+            <i class="caret-icon fas fa-caret-down"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountMenuBtn">
+            <li><a href="#" class="dropdown-item">Profil</a></li>
+            <li><a href="#" class="dropdown-item">Ganti Akun</a></li>
+            <li><a href="#" class="dropdown-item">Setelan</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="#" class="dropdown-item text-danger">Keluar</a></li>
+          </ul>
+        </div>
+        
+        <button type="button" class="myNavbar-toggler navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#sidebar-mobile"
+          aria-controls="sidebar-mobile" aria-expanded="false" aria-label="Offcanvas Toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar (Mobile) -->
+  <div class="mySidebar-mobile myBg-color offcanvas offcanvas-start" tabindex="-1" id="sidebar-mobile" aria-labelledby="sidebarMobile">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMobile-title">
+        <b>Buku</b>Nusantara
+      </h5>
+      
+      <button type="button" class="btn-close text-reset" id="sidebarMobile-closeBtn"
+      data-bs-dismiss="offcanvas" aria-label="close"></button>
+    </div>
+    <div class="offcanvas-body overflow-x-hidden overflow-y-auto">
+      <ul class="nav nav-pills flex-column" id="sidemenu-mobile">
+        <li class="nav-item border-bottom active">
+          <a href="#" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li class="nav-item border-bottom">
+          <a href="#" class="nav-link">
+            <i class="fas fa-heart"></i>
+            <span>Favorit</span>
+          </a>
+        </li>
+        <li class="nav-item border-bottom disabled">
+          <a href="#categoryMenu-mobile" class="nav-link myDropdown-toggle" data-bs-toggle="collapse" aria-expanded="false">
+            <i class="fas fa-bars-staggered"></i>
+            <span>Kategori</span>
+            <i class="caret fas fa-caret-right"></i>
+          </a>
+          <div class="collapse" id="categoryMenu-mobile">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link fs-6">Fantasi</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link fs-6">Romantis</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link fs-6">Pendidikan</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="offcanvas-bottom pt-3">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item border-bottom">
+            <a class="nav-link">
+              <i class="fas fa-gear"></i>
+              <span>Setelan</span>
+            </a>
+          </li>
+          <li class="nav-item border-bottom">
+            <a class="nav-link">
+              <i class="fas fa-file-lines"></i>
+              <span>Kebijakan & Ketentuan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="myOffcanvas-bottom shadow bg-white position-absolute start-0 end-0 bottom-0 py-2 w-auto border-top">
+        <a href="#" class="nav-link logout-link">
+          <i class="fas fa-arrow-right-from-bracket"></i>
+          <span>Keluar</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Content -->
+  <div class="d-lg-flex d-block myContent">
+    <div class="col-lg-3 position-relative">
+      <!-- Sidebar (Desktop) -->
+      <div class="mySidebar-desktop shadow-lg">
+        <div class="mySidebar-desktop-header">
+          
+        </div>
+        <div class="mySidebar-desktop-body">
+          <ul class="nav nav-pills flex-column" id="sidemenu-mobile">
+            <li class="nav-item border-bottom active">
+              <a href="#" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+              </a>
+            </li>
+            <li class="nav-item border-bottom">
+              <a href="#" class="nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Favorit</span>
+              </a>
+            </li>
+            <li class="nav-item border-bottom disabled">
+              <a href="#categoryMenu-mobile" class="nav-link myDropdown-toggle" data-bs-toggle="collapse" aria-expanded="false">
+                <i class="fas fa-bars-staggered"></i>
+                <span>Kategori</span>
+                <i class="caret fas fa-caret-right"></i>
+              </a>
+              <div class="collapse" id="categoryMenu-mobile">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link fs-6">Fantasi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link fs-6">Romantis</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link fs-6">Pendidikan</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          
+          <!-- Sidebar Desktop Bottom -->
+          <div class="mySidebar-desktop-bottom pt-3">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item border-bottom">
+                <a class="nav-link">
+                  <i class="fas fa-gear"></i>
+                  <span>Setelan</span>
+                </a>
+              </li>
+              <li class="nav-item border-bottom">
+                <a class="nav-link">
+                  <i class="fas fa-file-lines"></i>
+                  <span>Kebijakan & Ketentuan</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="logout-link-box shadow bg-white position-absolute start-0 end-0 bottom-0 py-2 w-auto border-top">
+          <a href="#" class="nav-link logout-link">
+            <i class="fas fa-arrow-right-from-bracket"></i>
+            <span>Keluar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <!-- Feed -->
+      <div class="container-fluid feed px-3 pt-2">
+        <div class="book-box w-100 px-3 py-4 mb-4 shadow-sm rounded-3 myBg-color">
+          <h1 class="book-box-heading">For You</h1>
+          <div class="book-list-wrap w-100 mt-3">
+            <div class="book-list d-flex w-auto h-100 gap-3" id="book-list">
+              <div class="book rounded">
+                <img src="./pdf/sass.jpg" class="book-img"/>
+                <h1 class="book-name fs-4">nwnwjjejejejwjwkwjwkjejewj</h1>
+                <button class="book-btn btn mx-auto" onclick="readPDF()">Baca</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script Javascript -->
+  <script src="js/pdf.mjs" type="module"></script>
+  <script src="js/pdf-options.js" type="module"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/fontawesome.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
